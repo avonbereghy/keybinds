@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Claude Code Cheat Sheet</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 0.25in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7pt;
+    line-height: 1.3;
+    color: #000;
+    background: #fff;
+  }
+  .header-bar {
+    border-bottom: 2px solid #000;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+  .title {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .title small {
+    font-size: 7pt;
+    font-weight: 400;
+  }
+  .layout {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .layout > tbody > tr > td {
+    width: 33.33%;
+    vertical-align: top;
+    padding: 0 5px;
+    border-left: 1px solid #000;
+    font-weight: normal;
+    white-space: normal;
+  }
+  .layout > tbody > tr > td:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  .layout > tbody > tr > td:last-child {
+    padding-right: 0;
+  }
+  .col-header {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+  }
+  h2 {
+    font-size: 7.5pt;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0px;
+  }
+  h2.first {
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 6.5pt;
+    font-weight: 600;
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
+  .shortcuts {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0px;
+  }
+  .shortcuts td {
+    padding: 1px 1px;
+    vertical-align: top;
+    font-size: 6.8pt;
+    white-space: normal;
+    font-weight: normal;
+    border: none;
+    border-bottom: 0.5px solid #ccc;
+    width: auto;
+  }
+  .shortcuts td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+    width: 48%;
+  }
+  .shortcuts tr:last-child td {
+    border-bottom: none;
+  }
+  .note {
+    font-size: 6pt;
+    font-style: italic;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  kbd {
+    font-family: "SF Mono", "Menlo", "Monaco", monospace;
+    font-size: 6.5pt;
+    background: #fff;
+    border: none;
+    padding: 0;
+  }
+  code {
+    font-family: "SF Mono", "Menlo", "Monaco", monospace;
+    font-size: 6.5pt;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="title">Claude Code Cheat Sheet <small>— CLI Shortcuts · Slash Commands · Launch Flags · Config</small></div>
+</div>
+
+<table class="layout"><tbody><tr>
+
+<!-- ==================== COLUMN 1: Controls & Input ==================== -->
+<td>
+<div class="col-header">Controls &amp; Input</div>
+
+<h2 class="first">General Controls</h2>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>C</kbd></td><td>Cancel input or generation</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>D</kbd></td><td>Exit session (EOF)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Clear screen (keeps conversation)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>O</kbd></td><td>Toggle verbose output</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Reverse search command history</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>V</kbd> / <kbd>Cmd</kbd>+<kbd>V</kbd></td><td>Paste image from clipboard</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>B</kbd></td><td>Background a task (2x in tmux)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>F</kbd></td><td>Kill background agents (2x to confirm)</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>T</kbd></td><td>Toggle task list</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>G</kbd></td><td>Open prompt in external editor</td></tr>
+<tr><td><kbd>↑</kbd> / <kbd>↓</kbd></td><td>Navigate command history</td></tr>
+<tr><td><kbd>←</kbd> / <kbd>→</kbd></td><td>Cycle dialog tabs</td></tr>
+</table>
+
+<h2>Mode Switching</h2>
+<table class="shortcuts">
+<tr><td><kbd>Esc</kbd> <kbd>Esc</kbd></td><td>Rewind / undo last action</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Tab</kbd></td><td>Cycle permission modes</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>P</kbd> / <kbd>Alt</kbd>+<kbd>P</kbd></td><td>Switch model</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>T</kbd> / <kbd>Alt</kbd>+<kbd>T</kbd></td><td>Toggle extended thinking</td></tr>
+</table>
+
+<h2>Multiline Input</h2>
+<table class="shortcuts">
+<tr><td><kbd>\</kbd> + <kbd>Enter</kbd></td><td>All terminals</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>Enter</kbd></td><td>macOS Terminal.app</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>iTerm2, WezTerm, Ghostty, Kitty</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>J</kbd></td><td>All terminals</td></tr>
+</table>
+
+<h2>Text Editing (Readline)</h2>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>E</kbd></td><td>Beginning / end of line</td></tr>
+<tr><td><kbd>Alt</kbd>+<kbd>B</kbd> / <kbd>F</kbd></td><td>Move back / forward one word</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Delete to end of line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Delete entire line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Delete word backward</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Paste (yank) deleted text</td></tr>
+<tr><td><kbd>Alt</kbd>+<kbd>Y</kbd></td><td>Cycle kill ring (after Ctrl+Y)</td></tr>
+</table>
+
+<h2>Quick Prefixes</h2>
+<table class="shortcuts">
+<tr><td><kbd>/</kbd></td><td>Invoke slash command or skill</td></tr>
+<tr><td><kbd>!</kbd></td><td>Execute bash directly (e.g. !git status)</td></tr>
+<tr><td><kbd>@</kbd></td><td>File path autocomplete</td></tr>
+</table>
+
+<p class="note">macOS: Set Option as Meta key in Terminal → Settings → Profiles → Keyboard for Alt shortcuts.</p>
+
+<h2>Custom Slash Commands</h2>
+<table class="shortcuts">
+<tr><td class="custom"><code>/symphony</code></td><td>★ Full end-to-end project generation</td></tr>
+<tr><td class="custom"><code>/plan-convergence</code></td><td>★ 3-perspective plan comparison</td></tr>
+<tr><td class="custom"><code>/agent-plan</code></td><td>★ Multi-agent execution strategy</td></tr>
+<tr><td class="custom"><code>/research</code></td><td>★ Best practices &amp; architecture research</td></tr>
+<tr><td class="custom"><code>/review-gauntlet</code></td><td>★ 5-pass sequential code review</td></tr>
+<tr><td class="custom"><code>/skill-scan</code></td><td>★ Scan codebase for skill matches</td></tr>
+</table>
+<p class="note">Custom commands: .claude/commands/ or project commands/</p>
+
+</td>
+
+<!-- ==================== COLUMN 2: Slash Commands ==================== -->
+<td>
+<div class="col-header">Slash Commands</div>
+
+<h2 class="first">Session &amp; Navigation</h2>
+<table class="shortcuts">
+<tr><td><code>/clear</code></td><td>Clear conversation (/reset, /new)</td></tr>
+<tr><td><code>/compact</code> <em>[focus]</em></td><td>Summarize to free context</td></tr>
+<tr><td><code>/context</code></td><td>Visualize context usage</td></tr>
+<tr><td><code>/resume</code> <em>[session]</em></td><td>Resume past conversation (/continue)</td></tr>
+<tr><td><code>/rewind</code></td><td>Restore to previous point (/checkpoint)</td></tr>
+<tr><td><code>/fork</code> <em>[name]</em></td><td>Branch conversation (/branch)</td></tr>
+<tr><td><code>/rename</code> <em>[name]</em></td><td>Rename current session</td></tr>
+<tr><td><code>/exit</code></td><td>Exit CLI (/quit)</td></tr>
+</table>
+
+<h2>Model &amp; Effort</h2>
+<table class="shortcuts">
+<tr><td><code>/model</code> <em>[name]</em></td><td>Change model (sonnet, opus, haiku)</td></tr>
+<tr><td><code>/effort</code> <em>[level]</em></td><td>Set: low / medium / high / max / auto</td></tr>
+<tr><td><code>/fast</code> <em>[on|off]</em></td><td>Toggle fast mode</td></tr>
+</table>
+
+<h2>Configuration</h2>
+<table class="shortcuts">
+<tr><td><code>/config</code></td><td>Open settings (/settings)</td></tr>
+<tr><td><code>/init</code></td><td>Initialize CLAUDE.md for project</td></tr>
+<tr><td><code>/memory</code></td><td>Edit CLAUDE.md memory files</td></tr>
+<tr><td><code>/permissions</code></td><td>View/update tool permissions</td></tr>
+<tr><td><code>/keybindings</code></td><td>Open keybindings config</td></tr>
+<tr><td><code>/terminal-setup</code></td><td>Configure terminal keybindings</td></tr>
+</table>
+
+<h2>Tools &amp; Output</h2>
+<table class="shortcuts">
+<tr><td><code>/diff</code></td><td>Interactive diff viewer</td></tr>
+<tr><td><code>/cost</code></td><td>Token usage and cost stats</td></tr>
+<tr><td><code>/doctor</code></td><td>Diagnose installation</td></tr>
+<tr><td><code>/export</code> <em>[file]</em></td><td>Export conversation as text</td></tr>
+<tr><td><code>/copy</code> <em>[N]</em></td><td>Copy Nth-last response to clipboard</td></tr>
+<tr><td><code>/plan</code></td><td>Enter plan mode</td></tr>
+<tr><td><code>/review</code></td><td>Review recent changes</td></tr>
+<tr><td><code>/pr-comments</code> <em>[PR]</em></td><td>Fetch GitHub PR comments</td></tr>
+</table>
+
+<h2>MCP &amp; Plugins</h2>
+<table class="shortcuts">
+<tr><td><code>/mcp</code></td><td>Manage MCP servers</td></tr>
+<tr><td><code>/plugin</code></td><td>Manage plugins</td></tr>
+<tr><td><code>/skills</code></td><td>List available skills</td></tr>
+<tr><td><code>/desktop</code></td><td>Continue in Desktop app</td></tr>
+</table>
+
+
+</td>
+
+<!-- ==================== COLUMN 3: CLI & Config ==================== -->
+<td>
+<div class="col-header">CLI &amp; Config</div>
+
+<h2 class="first">Launch Commands</h2>
+<table class="shortcuts">
+<tr><td><code>claude</code></td><td>Start interactive session</td></tr>
+<tr><td><code>claude "query"</code></td><td>Start with initial prompt</td></tr>
+<tr><td><code>claude -p "query"</code></td><td>Non-interactive: print and exit</td></tr>
+<tr><td><code>claude -c</code></td><td>Continue most recent conversation</td></tr>
+<tr><td><code>claude -r "session"</code></td><td>Resume specific session</td></tr>
+<tr><td><code>claude -m opus</code></td><td>Use a specific model</td></tr>
+<tr><td><code>claude --effort max</code></td><td>Maximum thinking effort</td></tr>
+<tr><td><code>claude --fast on</code></td><td>Fast mode</td></tr>
+<tr><td><code>claude -w</code></td><td>Start in isolated git worktree</td></tr>
+<tr><td><code>cat f | claude -p "q"</code></td><td>Process piped content</td></tr>
+</table>
+
+<h2>Useful Flags</h2>
+<table class="shortcuts">
+<tr><td><code>-n</code> <em>name</em></td><td>Set session display name</td></tr>
+<tr><td><code>--agent</code> <em>name</em></td><td>Use specific subagent</td></tr>
+<tr><td><code>--add-dir</code> <em>path</em></td><td>Add working directories</td></tr>
+<tr><td><code>--max-turns</code> <em>N</em></td><td>Limit agentic turns</td></tr>
+<tr><td><code>--max-budget-usd</code> <em>$</em></td><td>Max spend before stopping</td></tr>
+<tr><td><code>-v</code></td><td>Verbose turn-by-turn output</td></tr>
+<tr><td><code>--debug</code> <em>[filter]</em></td><td>Debug mode (e.g. "api,mcp")</td></tr>
+<tr><td><code>--permission-mode</code></td><td>default / plan / dontAsk / bypass</td></tr>
+<tr><td><code>--system-prompt</code> <em>text</em></td><td>Replace default system prompt</td></tr>
+<tr><td><code>--remote</code> <em>task</em></td><td>Create web session on claude.ai</td></tr>
+<tr><td><code>--from-pr</code> <em>PR</em></td><td>Resume from GitHub PR</td></tr>
+</table>
+
+<h2>Config File Locations</h2>
+<table class="shortcuts">
+<tr><td><code>~/.claude/CLAUDE.md</code></td><td>Global instructions (all projects)</td></tr>
+<tr><td><code>.claude/CLAUDE.md</code></td><td>Project instructions (git shared)</td></tr>
+<tr><td><code>~/.claude/settings.json</code></td><td>User settings</td></tr>
+<tr><td><code>.claude/settings.json</code></td><td>Project settings</td></tr>
+<tr><td><code>.claude/settings.local.json</code></td><td>Local overrides (gitignored)</td></tr>
+<tr><td><code>.mcp.json</code></td><td>Project MCP servers</td></tr>
+</table>
+
+<h2>Environment Variables</h2>
+<table class="shortcuts">
+<tr><td><code>ANTHROPIC_API_KEY</code></td><td>API key (pay-as-you-go)</td></tr>
+<tr><td><code>ANTHROPIC_MODEL</code></td><td>Override default model</td></tr>
+<tr><td><code>ANTHROPIC_BASE_URL</code></td><td>Custom API endpoint</td></tr>
+</table>
+
+</td>
+
+</tr></tbody></table>
+
+</body>
+</html>

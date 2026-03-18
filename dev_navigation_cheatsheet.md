@@ -249,4 +249,4 @@ Eight inspirations mapped to production architecture layers (working memory, sho
 4. **What might actually solve it now?** — MCP (universal protocol), local embeddings (bge-micro-v2), sqlite-vec (30MB vector search). The gap is a system combining citation-validation + namespace-scoping + source-grounding + file-based inspectability.
 
 ## File Location
-`/Users/avb/Projects/Repos/ClaudeStage/claude-cortex/RESEARCH.md` — 510 lines, ~45KB
+`claude-cortex/RESEARCH.md` — 510 lines, ~45KB
