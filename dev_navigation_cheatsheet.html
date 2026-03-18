@@ -11,7 +11,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 7pt;
+    font-size: 7.8pt;
     line-height: 1.3;
     color: #000;
     background: #fff;
@@ -22,11 +22,11 @@
     padding-bottom: 2px;
   }
   .title {
-    font-size: 11pt;
+    font-size: 12pt;
     font-weight: 700;
   }
   .title small {
-    font-size: 7pt;
+    font-size: 7.8pt;
     font-weight: 400;
   }
   .layout {
@@ -49,7 +49,7 @@
     padding-right: 0;
   }
   .col-header {
-    font-size: 8pt;
+    font-size: 10pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -58,7 +58,7 @@
     margin-bottom: 3px;
   }
   h2 {
-    font-size: 7.5pt;
+    font-size: 9.5pt;
     font-weight: 700;
     margin-top: 12px;
     margin-bottom: 1px;
@@ -69,7 +69,7 @@
     margin-top: 0;
   }
   h3 {
-    font-size: 6.5pt;
+    font-size: 8.5pt;
     font-weight: 600;
     margin-top: 2px;
     margin-bottom: 0px;
@@ -82,7 +82,7 @@
   .shortcuts td {
     padding: 1px 1px;
     vertical-align: top;
-    font-size: 6.8pt;
+    font-size: 7.5pt;
     white-space: normal;
     font-weight: normal;
     border: none;
@@ -98,14 +98,14 @@
     border-bottom: none;
   }
   .note {
-    font-size: 6pt;
+    font-size: 6.8pt;
     font-style: italic;
     margin-top: 1px;
     margin-bottom: 1px;
   }
   kbd {
     font-family: "SF Mono", "Menlo", "Monaco", monospace;
-    font-size: 6.5pt;
+    font-size: 7.2pt;
     background: #fff;
     border: none;
     padding: 0;
@@ -171,7 +171,7 @@
 <tr><td><kbd>Cmd</kbd>+<kbd>Space</kbd></td><td>Jump to project (Raycast)</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>`</kbd></td><td>Quick switch windows</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>P</kbd></td><td>Open file in VS Code</td></tr>
-<tr><td class="custom"><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>★ Switch tabs</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Tab</kbd></td><td>Switch tabs (recent)</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>`</kbd></td><td>Toggle terminal</td></tr>
 </table>
 <p class="note">Desktops = contexts · Windows = projects · Tabs = files</p>
@@ -247,7 +247,7 @@
 <table class="shortcuts">
 <tr><td><kbd>Cmd</kbd>+<kbd>\</kbd></td><td>Split editor</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd></td><td>Focus editor group</td></tr>
-<tr><td class="custom"><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>★ Prev/next tab</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Tab</kbd></td><td>Switch tabs (recent)</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Cmd</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>Focus group left/right</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>W</kbd></td><td>Close editor</td></tr>
 <tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Cmd</kbd>+<kbd>W</kbd></td><td>Close all editors</td></tr>
@@ -293,6 +293,18 @@
 <tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Clear screen</td></tr>
 <tr><td><kbd>Opt</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td><td>Move word by word</td></tr>
 <tr><td><kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Paste killed text (yank)</td></tr>
+</table>
+
+<h2>Rectangle (window tiling)</h2>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>←</kbd></td><td>Left half</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>→</kbd></td><td>Right half</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>↑</kbd></td><td>Top half</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>↓</kbd></td><td>Bottom half</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>Enter</kbd></td><td>Maximize</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>←</kbd></td><td>Move to prev display</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>Cmd</kbd>+<kbd>→</kbd></td><td>Move to next display</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Opt</kbd>+<kbd>Delete</kbd></td><td>Restore previous size</td></tr>
 </table>
 
 <h2>tmux (prefix: Ctrl+B)</h2>
