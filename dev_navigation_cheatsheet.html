@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dev Navigation Cheat Sheet — macOS</title>
+<style>
+  @page {
+    size: letter portrait;
+    margin: 0.25in;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 7pt;
+    line-height: 1.3;
+    color: #000;
+    background: #fff;
+  }
+  .header-bar {
+    border-bottom: 2px solid #000;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
+  }
+  .title {
+    font-size: 11pt;
+    font-weight: 700;
+  }
+  .title small {
+    font-size: 7pt;
+    font-weight: 400;
+  }
+  .layout {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .layout > tbody > tr > td {
+    width: 33.33%;
+    vertical-align: top;
+    padding: 0 5px;
+    border-left: 1px solid #000;
+    font-weight: normal;
+    white-space: normal;
+  }
+  .layout > tbody > tr > td:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  .layout > tbody > tr > td:last-child {
+    padding-right: 0;
+  }
+  .col-header {
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 1px;
+    margin-bottom: 3px;
+  }
+  h2 {
+    font-size: 7.5pt;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 0px;
+  }
+  h2.first {
+    margin-top: 0;
+  }
+  h3 {
+    font-size: 6.5pt;
+    font-weight: 600;
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
+  .shortcuts {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0px;
+  }
+  .shortcuts td {
+    padding: 1px 1px;
+    vertical-align: top;
+    font-size: 6.8pt;
+    white-space: normal;
+    font-weight: normal;
+    border: none;
+    border-bottom: 0.5px solid #ccc;
+    width: auto;
+  }
+  .shortcuts td:first-child {
+    font-weight: 600;
+    white-space: nowrap;
+    width: 52%;
+  }
+  .shortcuts tr:last-child td {
+    border-bottom: none;
+  }
+  .note {
+    font-size: 6pt;
+    font-style: italic;
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  kbd {
+    font-family: "SF Mono", "Menlo", "Monaco", monospace;
+    font-size: 6.5pt;
+    background: #fff;
+    border: none;
+    padding: 0;
+  }
+  .custom { font-weight: 700; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+  <div class="title">Dev Navigation Cheat Sheet <small>— macOS · Multi-Display · VS Code · Terminal · Claude Code</small></div>
+</div>
+
+<table class="layout"><tbody><tr>
+
+<!-- ==================== COLUMN 1: macOS & Misc ==================== -->
+<td>
+<div class="col-header">macOS &amp; General</div>
+
+<h2 class="first">Desktop &amp; Window Nav</h2>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td><td>Switch desktop/space</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>↑</kbd></td><td>Mission Control</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>↓</kbd></td><td>App Exposé</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Tab</kbd></td><td>Switch apps</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>`</kbd></td><td>Cycle windows (same app)</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Q</kbd></td><td>Quit app</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>W</kbd></td><td>Close window/tab</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>M</kbd></td><td>Minimize window</td></tr>
+<tr><td><kbd>Fn</kbd>+<kbd>F11</kbd></td><td>Show Desktop</td></tr>
+</table>
+<p class="note">Each display has its own spaces. Mission Control shows all.</p>
+
+<h2>Universal macOS (most apps)</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>,</kbd></td><td>Settings / Preferences</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd></td><td>Help menu search (any menu item)</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>.</kbd></td><td>Cancel / Stop (like Esc)</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>Esc</kbd></td><td>Force Quit dialog</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>F2</kbd></td><td>Focus menu bar</td></tr>
+</table>
+
+<h3>Text fields (universal)</h3>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td><td>Beginning / end of line</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td><td>Move word by word</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>Delete</kbd></td><td>Delete word backward</td></tr>
+<tr><td><kbd>Fn</kbd>+<kbd>Delete</kbd></td><td>Forward delete character</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Delete</kbd></td><td>Delete to beginning of line</td></tr>
+</table>
+<p class="note">Enable: System Settings → Keyboard → Keyboard Navigation → ON</p>
+
+<h2>Raycast</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>Space</kbd></td><td>Open Raycast</td></tr>
+<tr><td>Type project name</td><td>Jump to project instantly</td></tr>
+<tr><td>Type <code>clipboard</code></td><td>Clipboard history</td></tr>
+</table>
+
+<h2>Golden Workflow</h2>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>Switch context (desktop)</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Space</kbd></td><td>Jump to project (Raycast)</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>`</kbd></td><td>Quick switch windows</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>P</kbd></td><td>Open file in VS Code</td></tr>
+<tr><td class="custom"><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>★ Switch tabs</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>`</kbd></td><td>Toggle terminal</td></tr>
+</table>
+<p class="note">Desktops = contexts · Windows = projects · Tabs = files</p>
+
+<h2>VS Code — Custom Keys</h2>
+<table class="shortcuts">
+<tr><td class="custom"><kbd>F13</kbd></td><td>★ Run Python in terminal</td></tr>
+<tr><td class="custom"><kbd>F14</kbd></td><td>★ Restart Jupyter kernel</td></tr>
+<tr><td class="custom"><kbd>F15</kbd></td><td>★ Restart Python lang server</td></tr>
+<tr><td class="custom"><kbd>F16</kbd></td><td>★ Toggle light/dark theme</td></tr>
+<tr><td class="custom"><kbd>NumLock</kbd></td><td>★ Clear terminal (focused)</td></tr>
+<tr><td class="custom"><kbd>Ctrl</kbd>+<kbd>↑</kbd>/<kbd>↓</kbd></td><td>★ Jump 10 lines up/down</td></tr>
+<tr><td class="custom"><kbd>Cmd</kbd>+<kbd>Enter</kbd></td><td>★ Run / execute notebook cell</td></tr>
+<tr><td class="custom"><kbd>Ctrl</kbd>+<kbd>Enter</kbd></td><td>★ Insert code cell below</td></tr>
+</table>
+<p class="note">★ = Your custom keybindings</p>
+
+</td>
+
+<!-- ==================== COLUMN 2: VS Code ==================== -->
+<td>
+<div class="col-header">VS Code</div>
+
+<h2 class="first">General</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td><td>Command Palette</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>P</kbd></td><td>Quick Open file</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>,</kbd></td><td>Settings</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Cmd</kbd>+<kbd>S</kbd></td><td>Keyboard Shortcuts</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>N</kbd></td><td>New window</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>W</kbd></td><td>Close window</td></tr>
+</table>
+
+<h2>Editing</h2>
+<table class="shortcuts">
+<tr><td><kbd>Opt</kbd>+<kbd>↑</kbd> / <kbd>↓</kbd></td><td>Move line up/down</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Opt</kbd>+<kbd>↑</kbd> / <kbd>↓</kbd></td><td>Copy line up/down</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd></td><td>Delete line</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Enter</kbd></td><td>Insert line below</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd></td><td>Insert line above</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>]</kbd> / <kbd>[</kbd></td><td>Indent / outdent</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>/</kbd></td><td>Toggle line comment</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Opt</kbd>+<kbd>A</kbd></td><td>Toggle block comment</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>Z</kbd></td><td>Toggle word wrap</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>D</kbd></td><td>Add next occurrence to selection</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd></td><td>Select all occurrences</td></tr>
+</table>
+
+<h2>Multi-cursor</h2>
+<table class="shortcuts">
+<tr><td><kbd>Opt</kbd>+Click</td><td>Insert cursor</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>↑</kbd> / <kbd>↓</kbd></td><td>Cursor above / below</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>U</kbd></td><td>Undo last cursor</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>Opt</kbd>+<kbd>I</kbd></td><td>Cursor at end of each line</td></tr>
+</table>
+
+<h2>Navigation</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>G</kbd></td><td>Go to Line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Tab</kbd></td><td>Recent files</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>-</kbd></td><td>Go back</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>-</kbd></td><td>Go forward</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd></td><td>Go to Symbol</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd></td><td>Problems panel</td></tr>
+<tr><td><kbd>F8</kbd></td><td>Next error/warning</td></tr>
+<tr><td><kbd>F12</kbd></td><td>Go to Definition</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>F12</kbd></td><td>Peek Definition</td></tr>
+<tr><td><kbd>Shift</kbd>+<kbd>F12</kbd></td><td>Show References</td></tr>
+<tr><td><kbd>F2</kbd></td><td>Rename Symbol</td></tr>
+</table>
+
+<h2>Editor Groups &amp; Tabs</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>\</kbd></td><td>Split editor</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd></td><td>Focus editor group</td></tr>
+<tr><td class="custom"><kbd>Cmd</kbd>+<kbd>Opt</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>★ Prev/next tab</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Cmd</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>Focus group left/right</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>W</kbd></td><td>Close editor</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Cmd</kbd>+<kbd>W</kbd></td><td>Close all editors</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></td><td>Reopen closed editor</td></tr>
+</table>
+
+<h2>Display &amp; Panels</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>B</kbd></td><td>Toggle sidebar</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>0</kbd></td><td>Focus sidebar</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>J</kbd></td><td>Toggle bottom panel</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td><td>Explorer</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd></td><td>Search panel</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>G</kbd></td><td>Source Control</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>X</kbd></td><td>Extensions</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>`</kbd></td><td>Toggle integrated terminal</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>K</kbd> <kbd>Z</kbd></td><td>Zen Mode</td></tr>
+</table>
+
+
+</td>
+
+<!-- ==================== COLUMN 3: Terminal, tmux, Claude Code ==================== -->
+<td>
+<div class="col-header">Terminal &amp; CLI</div>
+
+<h2 class="first">Terminal.app (macOS native)</h2>
+<table class="shortcuts">
+<tr><td><kbd>Cmd</kbd>+<kbd>T</kbd></td><td>New tab</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd></td><td>Switch tabs</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>N</kbd></td><td>New window</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>K</kbd></td><td>Clear scrollback</td></tr>
+<tr><td><kbd>Cmd</kbd>+<kbd>+</kbd> / <kbd>-</kbd></td><td>Font size</td></tr>
+</table>
+
+<h3>Shell line editing (zsh/bash)</h3>
+<table class="shortcuts">
+<tr><td><kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>E</kbd></td><td>Beginning / end of line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>W</kbd></td><td>Delete word backward</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>U</kbd></td><td>Delete to beginning of line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Delete to end of line</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>R</kbd></td><td>Reverse search history</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>L</kbd></td><td>Clear screen</td></tr>
+<tr><td><kbd>Opt</kbd>+<kbd>←</kbd> / <kbd>→</kbd></td><td>Move word by word</td></tr>
+<tr><td><kbd>Ctrl</kbd>+<kbd>Y</kbd></td><td>Paste killed text (yank)</td></tr>
+</table>
+
+<h2>tmux (prefix: Ctrl+B)</h2>
+<h3>Sessions</h3>
+<table class="shortcuts">
+<tr><td><code>tmux new -s name</code></td><td>Start named session</td></tr>
+<tr><td><code>tmux attach -t name</code></td><td>Reattach session</td></tr>
+<tr><td><code>tmux ls</code></td><td>List sessions</td></tr>
+<tr><td>Prefix → <kbd>d</kbd></td><td>Detach</td></tr>
+</table>
+<h3>Panes</h3>
+<table class="shortcuts">
+<tr><td>Prefix → <kbd>%</kbd></td><td>Split left/right</td></tr>
+<tr><td>Prefix → <kbd>"</kbd></td><td>Split top/bottom</td></tr>
+<tr><td>Prefix → Arrow</td><td>Move between panes</td></tr>
+<tr><td>Prefix → <kbd>z</kbd></td><td>Zoom pane (toggle)</td></tr>
+<tr><td>Prefix → <kbd>x</kbd></td><td>Kill pane</td></tr>
+<tr><td>Prefix → <kbd>Ctrl</kbd>+Arrow</td><td>Resize pane</td></tr>
+<tr><td class="custom"><kbd>Opt</kbd>+<kbd>→</kbd></td><td>★ Move right / create split</td></tr>
+<tr><td class="custom"><kbd>Opt</kbd>+<kbd>←</kbd></td><td>★ Move left / create split</td></tr>
+</table>
+<h3>Windows</h3>
+<table class="shortcuts">
+<tr><td>Prefix → <kbd>c</kbd></td><td>New window</td></tr>
+<tr><td>Prefix → <kbd>n</kbd> / <kbd>p</kbd></td><td>Next / prev window</td></tr>
+<tr><td>Prefix → <kbd>0</kbd>-<kbd>9</kbd></td><td>Jump to window #</td></tr>
+<tr><td>Prefix → <kbd>w</kbd></td><td>List all windows</td></tr>
+</table>
+<h3>claude-tmux</h3>
+<table class="shortcuts">
+<tr><td class="custom">Prefix → <kbd>Opt</kbd>+<kbd>N</kbd>/<kbd>n</kbd></td><td>★ Next/prev attention</td></tr>
+<tr><td class="custom">Prefix → <kbd>Opt</kbd>+<kbd>D</kbd>/<kbd>d</kbd></td><td>★ Next/prev done</td></tr>
+<tr><td class="custom">Prefix → <kbd>Opt</kbd>+<kbd>U</kbd></td><td>★ TUI dashboard</td></tr>
+</table>
+
+
+</td>
+
+</tr></tbody></table>
+
+</body>
+</html>
